@@ -79,36 +79,54 @@ namespace BinarySearchTree
                 else
                     currentnode = currentnode.rchild;
             }
-        }
+            public void inorder(node ptr)
+            {
+                Console.WriteLine("Tree is empty");
+                return;
+            }
+            if (ptr != null)
+            {
+                inorder(ptr.lchild);
+                Console.WriteLine(ptr.info + "");
+                inorder(ptr.rchild);
+            }
 
-        public void inorder(node ptr)
-        {
-            Console.WriteLine("Tree is empty");
-            return;
-        }
-            if(ptr != null)
+
+            public void preorder(node ptr)
+            {
+                if (ROOT == null)
                 {
-                    inorder(ptr.lchild);
-                    Console.WriteLine(IntPtr.info +"");
-                    inorder(ptr.rchild);
+                    Console.WriteLine("Tree is empty");
+                    return;
                 }
+                if (ptr != null)
+                {
+                    Console.WriteLine(ptr.info + "");
+                    preorder(ptr.lchild);
+                    preorder(ptr.rchild);
+                }
+            }
+            public void postorder(node ptr)
+            {
+                if (ROOT == null)
+                {
+                    Console.WriteLine("Tree is Empty");
+                    return;
+
+                }
+                if (ptr != null)
+                {
+                    postorder(ptr.lchild);
+                    postorder(ptr.rchild);
+                    Console.Write(ptr.info + "");
+                }
+            }
         }
 
-    public void preorder(node ptr) 
-    { 
-        if(ROOT == null)
+       
+
+    static void Main(string[] args)
     {
-        Console.WriteLine("Tree is empty");
-        return ;
-    }
-        if (ptr != null)
-    {
-        Console.WriteLine(ptr.info + "");
-        preorder(ptr.lchild);
-        preorder(ptr.rchild);
-    }
-    }
-    public static void Main(string[] args)
-    {
+
     }
 }
