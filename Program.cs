@@ -66,7 +66,7 @@ namespace BinarySearchTree
             }
         }
 
-        public void fin(string element, ref node parent, ref node currentnode)
+        public void find(string element, ref node parent, ref node currentnode)
         {
 
             currentnode = ROOT;
@@ -79,7 +79,10 @@ namespace BinarySearchTree
                 else
                     currentnode = currentnode.rchild;
             }
-            public void inorder(node ptr)
+        }
+        public void inorder(node ptr)
+        {
+            if (ROOT == null)
             {
                 Console.WriteLine("Tree is empty");
                 return;
@@ -90,6 +93,7 @@ namespace BinarySearchTree
                 Console.WriteLine(ptr.info + "");
                 inorder(ptr.rchild);
             }
+        }
 
 
             public void preorder(node ptr)
